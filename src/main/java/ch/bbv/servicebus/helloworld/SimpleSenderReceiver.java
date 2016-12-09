@@ -33,8 +33,8 @@ public class SimpleSenderReceiver implements MessageListener {
   public SimpleSenderReceiver() throws Exception {
     // Configure JNDI environment
     Hashtable<String, String> env = new Hashtable<String, String>();
-    env.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.jms.jndi.JmsInitialContextFactory");
-    // env.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.amqp_1_0.jms.jndi.PropertiesFileInitialContextFactory");
+    // env.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.jms.jndi.JmsInitialContextFactory");
+    env.put(Context.INITIAL_CONTEXT_FACTORY, "org.apache.qpid.amqp_1_0.jms.jndi.PropertiesFileInitialContextFactory");
     env.put(Context.PROVIDER_URL, this.getClass().getClassLoader().getResource("servicebus.properties").toURI().toString());
     Context context = new InitialContext(env);
 
